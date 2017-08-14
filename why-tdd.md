@@ -2,7 +2,7 @@
 
 ## the good, the bad, the ugly
 
-@ChristophWelcz
+[@ChristophWelcz](https://twitter.com/ChristophWelcz)
 
 https://github.com/enolive/why-tdd
 
