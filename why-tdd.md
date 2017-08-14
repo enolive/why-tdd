@@ -30,7 +30,7 @@ Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obviou
     "tdd-since": "2013"
   },
   "professions": [
-    "Software Developer",
+    "Software Craftsman",
     "Master of Sloth & Incompentence"
   ],
   "interests": [
@@ -78,7 +78,7 @@ Contributing factors
 ![our context](images/context.png)
 
 
-### some facts
+### where we started...
 
 * 3 developers
 * many dependencies
@@ -86,7 +86,7 @@ Contributing factors
 * little to no experience with TDD
 
 
-### where we are now
+### ...where we are now
 
 * ~100k LoC
 * ~ 87% code coverage
@@ -125,7 +125,8 @@ I am constantly overestimating my tasks by 50%
 
 ## TDD is fun
 
-* writing a complex features for weeks without seeing it working sucks :(
+writing a complex features for weeks without seeing it working sucks :(
+
 * small feedback cycles
 * feeling of accomplishment after each Red-Green-Refactor step
 
@@ -197,7 +198,7 @@ Learning tests have a negative effort!
 
 # The Bad
 
-our main problems and how we conquered them
+our main problems and how we encountered them
 
 
 
@@ -213,9 +214,11 @@ our main problems and how we conquered them
 
 ## Writing maintainable tests
 
-* Refactoring
+* Boy scout rule
 * Removing duplications
 * Builder-pattern for repetive/hard stuff like object creation or mocking
+
+Treat your tests as a first class citizen!
 
 
 ```csharp
@@ -264,11 +267,13 @@ report.Should()
 
 
 ```csharp
-app.RegisterServiceMock<IPdfConvertService>();
+// initialization
+var app = new UnitTestApplication();
+app.BeginRun();
 ...
-var stub = app.GetServiceMock<IPdfConvertService>();
-stub.Setup(x => x.Convert(It.IsAny<PdfConvertOptions>())
-    .Returns(blob);
+// usage
+app.RegisterServiceMock<IPdfConvertService>();
+app.RegisterServiceMock<IXpsDocumentGenerator>();
 ```
 
 
@@ -286,11 +291,19 @@ stub.Setup(x => x.Convert(It.IsAny<PdfConvertOptions>())
 * Improve the error output 
 
 
-```
-Expected true to be false
+```csharp
+Assert.IsTrue(File.Exists(path));
 
-Expected that the file '/tmp/generated-pdf' to exist because the 
-PDF conversion was triggered, but it doesn't.
+Expected true to be false
+```
+
+```csharp
+
+path.ToFileName().Should()
+    .Exist("because the PDF conversion was triggered");
+
+Expected the file 'tmp\generated-pdf' to exist
+because the PDF conversion was triggered, but it doesn't.
 ```
 
 
@@ -304,7 +317,7 @@ PDF conversion was triggered, but it doesn't.
 
 
 
-## Coding standards
+## Different Coding standards
 
 * Test coding conventions after 1 year
     * Naming
@@ -317,7 +330,10 @@ PDF conversion was triggered, but it doesn't.
     * FxCop
     * StyleCop
     * SonarQube
-* Shared team settings for Resharper incl. Live Templates for writing tests
+* Shared team settings for Resharper incl. 
+    * Live Templates for writing tests
+    * Coding Style
+    * Reformatting Rules
 > It should always be easier to follow a rule than to violate it     
 
 
@@ -351,13 +367,13 @@ Strategy of **P**assion and **P**atience
 
 ## (Almost) forgot how to use a debugger
 
-Debugging is a cool technique, but rarely used in our code base
+* Debugging is a cool technique, but rarely used in our code base
+* Even when used, much easier
 
-* even when used, much easier
+
 * more entry points to the (possibly) broken feature
 * less break points
 * no conditional break points
 * no long watch list
-
 
 > debugging is when a dev surrenders to the complexity of the code.
