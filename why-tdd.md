@@ -125,7 +125,7 @@ I am constantly overestimating my tasks by 50%
 
 ## TDD is fun
 
-writing a complex features for weeks without seeing it working sucks :(
+writing a complex feature for weeks without seeing it working sucks :(
 
 * small feedback cycles
 * feeling of accomplishment after each Red-Green-Refactor step
