@@ -1,0 +1,23 @@
+@startuml
+
+
+package "REA" {
+    [Manage Layouts]
+    [Output Invoices]
+    [Preview]
+    [Migration]
+}
+
+:User: -> [Invoice Calculation]
+[Output Invoices] -> [Printer]
+[Output Invoices] -> [DMS]
+[Invoice Calculation] -> [Output Invoices]
+[Invoice Calculation] -> [Manage Layouts]
+[Invoice Calculation] -> [Preview]
+[Preview] -> [Output Invoices]
+
+
+note right of REA: our fancy new app
+note bottom of [Invoice Calculation]: legacy stuff
+
+@enduml
