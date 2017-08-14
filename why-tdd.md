@@ -14,7 +14,8 @@ Some aspects might be obvious...
 
 ![this is a meme](images/captain-obvious.jpg)
 
-<sub>Source: http://knowyourmeme.com/photos/1005018-captain-obvious</sub>
+Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obvious)
+
 
 
 ## whoami.json
@@ -93,6 +94,7 @@ Contributing factors
 * over 6000 unit tests
 * 200 integration tests
 * 70 acceptance tests with SpecFlow
+* 50 UI Tests
 
 
 
@@ -111,6 +113,13 @@ What TDD helped us with
 * Bugfixing much easier through reproduction tests!
 
 I am constantly overestimating my tasks by 50%
+
+
+
+## TDD is much faster than Test last
+
+* I need about 3x as long when writing tests after
+* I almost always find at least one bug ;-)
 
 
 
