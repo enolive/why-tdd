@@ -106,13 +106,13 @@ What TDD helped us with
 
 ## TDD makes you faster
 
-* More effort to write code (30%)
+Writing new code takes indeed more effor (30%), but
 * When feature is finished, it just works
 * Less bugs (50%)
 * Less debugging (90%)
 * Bugfixing much easier through reproduction tests!
 
-I am constantly overestimating my tasks by 50%
+*I am constantly overestimating my tasks by 50%*
 
 
 
@@ -125,10 +125,10 @@ I am constantly overestimating my tasks by 50%
 
 ## TDD is fun
 
-writing a complex feature for weeks without seeing it working sucks :(
-
 * small feedback cycles
 * feeling of accomplishment after each Red-Green-Refactor step
+
+*writing a complex feature for weeks without seeing it working sucks :(*
 
 
 
@@ -192,7 +192,7 @@ Added new unplanned features
 * Can be tried out in new integration tests first
 * Problems become rapidly eminent (bugs, wrong usage)
 
-Learning tests have a negative effort!
+*Learning tests have a negative effort!*
 
 
 
@@ -218,7 +218,7 @@ our main problems and how we encountered them
 * Removing duplications
 * Builder-pattern for repetive/hard stuff like object creation or mocking
 
-Treat your tests as a first class citizen!
+*Treat your tests as a first class citizen!*
 
 
 ```csharp
@@ -296,6 +296,7 @@ Assert.IsTrue(File.Exists(path));
 
 Expected true to be false
 ```
+vs
 
 ```csharp
 
@@ -330,6 +331,8 @@ because the PDF conversion was triggered, but it doesn't.
     * FxCop
     * StyleCop
     * SonarQube
+
+
 * Shared team settings for Resharper incl. 
     * Live Templates for writing tests
     * Coding Style
@@ -345,7 +348,7 @@ TDD is great, but
 * It is hard to follow the TDD cycle
 * some of our devs needed extra time for this
     
-Strategy of **P**assion and **P**atience
+*Strategy of **P**assion and **P**atience*
 
 
 
@@ -377,3 +380,7 @@ Strategy of **P**assion and **P**atience
 * no long watch list
 
 > debugging is when a dev surrenders to the complexity of the code.
+
+
+
+# Thanks!
