@@ -2,22 +2,22 @@
 
 
 package "REA" {
-    [Manage Layouts]
-    [Output Invoices]
     [Preview]
+    [Output Invoices]
+    [Manage Layouts]
     [Migration]
 }
 
 :User: -> [Invoice Calculation]
-[Output Invoices] -> [Printer]
-[Output Invoices] -> [DMS]
-[Invoice Calculation] -> [Output Invoices]
-[Invoice Calculation] -> [Manage Layouts]
-[Invoice Calculation] -> [Preview]
+[Invoice Calculation] -down-> [Output Invoices]
+[Invoice Calculation] -down-> [Preview]
+[Invoice Calculation] -down-> [Manage Layouts]
 [Preview] -> [Output Invoices]
+[Output Invoices] -down-> [Printer]
+[Output Invoices] -down-> [DMS]
 
 
-note right of REA: our fancy new app
-note bottom of [Invoice Calculation]: legacy stuff
+note bottom of REA: our fancy new app
+note right of [Invoice Calculation]: legacy stuff
 
 @enduml
