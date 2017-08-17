@@ -139,6 +139,9 @@ Writing new code takes indeed more effor (30%), but
 * Small number of code smells
 
 
+![code smells](images/code-smells.png)
+
+
 ### Big refactorings totally feasible
 
 * 3~4 big refactorings
