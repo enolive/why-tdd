@@ -12,7 +12,7 @@ https://github.com/enolive/why-tdd
 
 Some aspects might be obvious...
 
-![this is a meme](images/captain-obvious.jpg)
+![this is a meme](images/captaIncompetenceg)
 
 Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obvious)
 
@@ -31,7 +31,7 @@ Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obviou
   },
   "professions": [
     "Software Craftsman",
-    "Master of Sloth & Incompentence"
+    "Master of Sloth & Incompetence"
   ],
   "interests": [
     "Software Craftsmanship",
@@ -106,13 +106,13 @@ What TDD helped us with
 
 ## TDD makes you faster
 
-Writing new code takes indeed more effor (30%), but
+Writing new code takes indeed more effort (30%), but
 * When feature is finished, it just works
 * Less bugs (50%)
 * Less debugging (90%)
 * Bugfixing much easier through reproduction tests!
 
-*I am constantly overestimating my tasks by 50%*
+*I am constantly overestimating my tasks by 100%*
 
 
 
@@ -219,7 +219,7 @@ our main problems and how we encountered them
 
 * Boy scout rule
 * Removing duplications
-* Builder-pattern for repetive/hard stuff like object creation or mocking
+* Builder-pattern for repetitive/hard stuff like object creation or mocking
 
 *Treat your tests as a first class citizen!*
 
