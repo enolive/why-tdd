@@ -253,7 +253,7 @@ var store = AMigrationStore().WithReport(report).Build();
 
 ```csharp
 report.Should()
-    .HaveTechnialEvaluation("GenerateDocuments")
+    .HaveTechnicalEvaluation("GenerateDocuments")
     .Which.Should().HaveFailed();
 ```
 
