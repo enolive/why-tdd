@@ -12,7 +12,7 @@ https://github.com/enolive/why-tdd
 
 Some aspects might be obvious...
 
-![this is a meme](images/captaIncompetenceg)
+![this is a meme](images/captain-obvious.jpg)
 
 Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obvious)
 
@@ -136,7 +136,7 @@ Writing new code takes indeed more effort (30%), but
 
 * Tests as a security net
 * Code is cleaner
-* Small number of code smells
+* Small amount of code smells
 
 
 ![code smells](images/code-smells.png)
@@ -160,7 +160,7 @@ Writing new code takes indeed more effort (30%), but
 ### Less bottlenecks
 
 * 4 devs were programming different parts of the same feature
-* integration at the end (3 weeks) trivial
+* integration at the end (after 3 weeks) trivial
 
 
 
@@ -168,10 +168,10 @@ Writing new code takes indeed more effort (30%), but
 
 Added new unplanned features
 
-* Machine understandable Digital invoices
+* Machine understandable digital invoices
 * Output via Mail (SMTP, MAPI)
-* Upload to a in-house cloud service
-* Customizable Mail Templates with WYSIWYG editor
+* Upload to an in-house cloud service
+* Customizable mail templates with WYSIWYG editor
 
 
 
