@@ -31,7 +31,7 @@ Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obviou
   },
   "professions": [
     "Software Craftsman",
-    "Master of Sloth & Incompetence"
+    "Master of Laziness & Incompetence"
   ],
   "interests": [
     "Software Craftsmanship",
