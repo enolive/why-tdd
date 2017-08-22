@@ -57,7 +57,7 @@ Source: [knowyourmeme.com](http://knowyourmeme.com/photos/1005018-captain-obviou
 Contributing factors
 
 * high degree of autonomy
-* beginning Agile Transition
+* Agile Transition
 * SCC @ DATEV
 
 
@@ -151,54 +151,6 @@ Writing new code takes indeed more effort (30%), but
 
 
 
-## Involving more people is easier
-
-* 10 additional devs for short time tasks
-* 3 of them were absolute newbies
-
-
-### Less bottlenecks
-
-* 4 devs were programming different parts of the same feature
-* integration at the end (after 3 weeks) trivial
-
-
-
-## Extending scope is easy
-
-Added new unplanned features
-
-* Machine understandable digital invoices
-* Output via Mail (SMTP, MAPI)
-* Upload to an in-house cloud service
-* Customizable mail templates with WYSIWYG editor
-
-
-
-## LoC nearly constant for 2.5 years
-
-* Removing deprecated code possible
-* Less maintenance
-
-
-
-## Learning new techniques...
-
-* FP
-* Serialization
-* Extension methods
-* Programming with Promises
-
-
-### ...and new APIs
-
-* Can be tried out in new integration tests first
-* Problems become rapidly eminent (bugs, wrong usage)
-
-*Learning tests have a negative effort!*
-
-
-
 # The Bad
 
 our main problems and how we encountered them
@@ -207,33 +159,26 @@ our main problems and how we encountered them
 
 ## TDD is hard to master
 
+* finding the right tests
+* continuous refactoring
+* baby steps
+
+
 * Practice through
     * Coding Katas/Dojos
-    * Pair Programming
-    * Mob Programming
-    * in-house Code Retreats
-
-
-
-## Writing maintainable tests
-
-* Boy scout rule
-* Removing duplications
-* Builder-pattern for repetitive/hard stuff like object creation or mocking
-
-*Treat your tests as a first class citizen!*
-
-
-```csharp
-SetupPresentationManager()
-    .HavingPresentation(APresentation().WithText("My Text"))
-    .HavingPresentation(APresentation().WithImage(image))
-    .ConfigureMock();
-```
+    * Pair/Mob Programming
+    * Code Retreats
 
 
 
 ## Writing understandable tests
+
+A dev should understand the tests at the first glance
+
+
+* Naming test cases (scenario & expected result)
+* Sticking to the AAA-pattern (via explicit comments)
+
 
 * Elimination of unimportant details via the builder pattern
 * Fluent interface design
@@ -243,6 +188,7 @@ SetupPresentationManager()
 ```csharp
 var text = AText().Build(); // instead of "Test"
 var number = ANumber(); // instead of 42
+
 var report = AReport()
     .WithName("Something")
     .OfType<ReportType.Invoice>()
@@ -261,10 +207,16 @@ report.Should()
 
 ## Testing with dependencies
 
+how can I effectively test my software if I need to handle 
+so many dependencies?
+
+
 * Separation of algorithms and collaborators
-* Mocking
-* Dependency injection
 * Testable facades for hard to test third party stuff
+* Dependency injection
+
+
+* Mocking (via Moq)
 * Humble object pattern
 * Outside-in TDD
 
@@ -287,41 +239,10 @@ app.RegisterServiceMock<IXpsDocumentGenerator>();
 
 
 
-## Handling bad tests
-
-* Refactoring of flaky tests
-* Speed up slow integration tests
-* Improve the error output 
-
-
-```csharp
-Assert.IsTrue(File.Exists(path));
-
-Expected true to be false
-```
-vs
-
-```csharp
-
-path.ToFileName().Should()
-    .Exist("because the PDF conversion was triggered");
-
-Expected the file 'tmp\generated-pdf' to exist
-because the PDF conversion was triggered, but it doesn't.
-```
-
-
-
-## Lax discipline for running tests
-
-* One-Button solution for running all relevant tests
-* Continuous testing via NCrunch
-* Rejection of commits with failing tests (via TFS Gated check-in)
-* Automated build & deployment
-
-
-
 ## Different Coding standards
+
+Different ideas how a good test should look like
+
 
 * Test coding conventions after 1 year
     * Naming
@@ -331,27 +252,12 @@ because the PDF conversion was triggered, but it doesn't.
 
 
 * Static Code Analysis
-    * FxCop
-    * StyleCop
-    * SonarQube
-
-
 * Shared team settings for Resharper incl. 
-    * Live Templates for writing tests
-    * Coding Style
-    * Reformatting Rules
+    * Live Templates
+    * Coding Style & Reformatting Rules
+
+
 > It should always be easier to follow a rule than to violate it     
-
-
-
-## Changing old habits
-
-TDD is great, but
-
-* It is hard to follow the TDD cycle
-* some of our devs needed extra time for this
-    
-*Strategy of **P**assion and **P**atience*
 
 
 
@@ -365,22 +271,15 @@ TDD is great, but
 ## Programming becomes boring
 
 * no more thrill
-    * when touching an unfamiliar piece of code
-    * when rewriting parts of the application
-* no more crossword puzzles when reading code
+* no more crossword puzzles
 
 
 
 ## (Almost) forgot how to use a debugger
 
 * Debugging is a cool technique, but rarely used in our code base
-* Even when used, much easier
+* No need to use advanced debugging features
 
-
-* more entry points to the (possibly) broken feature
-* less break points
-* no conditional break points
-* no long watch list
 
 > debugging is when a dev surrenders to the complexity of the code.
 
